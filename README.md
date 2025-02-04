@@ -37,7 +37,7 @@ float rounded_down = floorf(val * 100) / 100; // returns 3.14
 
 ## Quick "if" formating
 ````
-char test = 0;
+int test = 0;
 
 m_value? test = 1 : test = 2 // do any bool operations before the "?" (ex: <, >, ==, etc...)
 
