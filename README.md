@@ -30,7 +30,7 @@ float rounded_down = floorf(val * 100) / 100; // returns 3.14
 ````
 char text = "test";
 
-m_value? text = "true" : text = "false"  // do any bool operations before the "?" (ex: <, >, ==, etc...)
+m_value? text = "true" : text = "false" // do any bool operations before the "?" (ex: <, >, ==, etc...)
 
 // is equivalent to :
 if (m_value)
