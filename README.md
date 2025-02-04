@@ -16,6 +16,7 @@ int main()
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 gen(rd()); // seed the generator
 
+    // For no range put : std::uniform_int_distribution<> distr(0, RAND_MAX);
     std::uniform_int_distribution<> distrInt(-10, 10); // define the range Int
     int randInt = distrInt(gen); // Generate random Int in range
     std::cout << "Random Int in Range : " << randInt << '\n'
