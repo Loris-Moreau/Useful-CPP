@@ -10,10 +10,15 @@ int main()
 {
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 gen(rd()); // seed the generator
-    std::uniform_int_distribution<> distr(25, 63); // define the range
 
-    int randNum = distr(gen); // Generate random number in range
-    std::cout << "Random Int in Range : " << randNum << '\n'
+    std::uniform_int_distribution<> distrInt(-10, 10); // define the range Int
+    std::uniform_real_distribution<> distrDouble(-10.5, 10.5); // define the range Double
+
+    int randInt = distrInt(gen); // Generate random Int in range
+    std::cout << "Random Int in Range : " << randInt << '\n'
+
+    double randDouble = distrDouble(gen); // Generate random Double in range
+    std::cout << "Random Double in Range : " << randDouble << '\n'
 }
 ```
 ---
