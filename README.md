@@ -37,17 +37,17 @@ float rounded_down = floorf(val * 100) / 100; // returns 3.14
 
 ## Quick "if" formating
 ````
-char text = "test";
+char test = 0;
 
-m_value? text = "true" : text = "false" // do any bool operations before the "?" (ex: <, >, ==, etc...)
+m_value? test = 1 : test = 2 // do any bool operations before the "?" (ex: <, >, ==, etc...)
 
 // is equivalent to :
 if (m_value)
 {
-    text = "true";
+    test = 1;
 } else
 {
-    text = "false";
+    test = 2;
 }
 ````
 
