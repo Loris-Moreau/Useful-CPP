@@ -25,3 +25,21 @@ float val = 3.14159265359
 float rounded_down = floorf(val * 10) / 10;   // returns 3.1
 float rounded_down = floorf(val * 100) / 100; // returns 3.14
 ```
+
+## Quick "if" formating
+````
+char text = "test";
+
+m_value? text = "true" : text = "false"  // do any bool operations before the "?" (ex: <, >, ==, etc...)
+
+// is equivalent to :
+if (m_value)
+{
+    text = "true";
+} else
+{
+    text = "false";
+}
+````
+
+
