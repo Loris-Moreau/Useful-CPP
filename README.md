@@ -4,6 +4,8 @@ Collection of useful functions in C++
 
 [C++ Best Practices](https://github.com/cpp-best-practices/cppbestpractices/tree/master)
 
+[C++ Built in Functions](https://github.com/Bhupesh-V/30-seconds-of-cpp)
+
 ## Random
 ```
 #include <iostream>
