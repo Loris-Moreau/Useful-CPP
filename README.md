@@ -17,11 +17,10 @@ int main()
     std::mt19937 gen(rd()); // seed the generator
 
     std::uniform_int_distribution<> distrInt(-10, 10); // define the range Int
-    std::uniform_real_distribution<> distrDouble(-10.5, 10.5); // define the range Double
-
     int randInt = distrInt(gen); // Generate random Int in range
     std::cout << "Random Int in Range : " << randInt << '\n'
 
+    std::uniform_real_distribution<> distrDouble(-10.5, 10.5); // define the range Double
     double randDouble = distrDouble(gen); // Generate random Double in range
     std::cout << "Random Double in Range : " << randDouble << '\n'
 }
