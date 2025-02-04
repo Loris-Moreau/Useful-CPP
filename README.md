@@ -1,5 +1,8 @@
 # Useful CPP
+
 Collection of useful functions in C++
+
+[C++ Best Practices](https://github.com/cpp-best-practices/cppbestpractices/tree/master)
 
 ## Random
 ```
