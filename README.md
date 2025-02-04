@@ -16,3 +16,12 @@ int main()
     std::cout << "Random Int in Range : " << randNum << '\n'
 }
 ```
+---
+
+## Rounded Value
+```
+// 10 for 1 after the comma, 100 for 2 after the comma & so on.
+float val = 3.14159265359
+float rounded_down = floorf(val * 10) / 10;   // returns 3.1
+float rounded_down = floorf(val * 100) / 100; // returns 3.14
+```
