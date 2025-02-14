@@ -28,6 +28,22 @@ int main()
 ```
 ---
 
+## Fast Random
+[Explanation](https://en.wikipedia.org/wiki/Xorshift "XORShift")
+```
+inline uint32_t XOrShift32(uint32_t *state)
+{
+    uint32_t x = *state;
+    x ^= x << 13;
+    x ^= x >> 17;
+    x ^= x << 5;
+    *state = x;
+    return x;
+}
+```
+
+---
+
 ## Rounded Value
 ```
 // 10 for 1 after the comma, 100 for 2 after the comma & so on.
