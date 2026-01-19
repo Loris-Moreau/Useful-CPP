@@ -1,0 +1,70 @@
+/** Function Described by Freya Holmer in her talk about quats in the NGJ2025 **/
+
+// Rotate a point given an angle
+float2 RotatePoint( float angleRad, float p )
+{  
+  float c = Cos( angleRad ); // <-- Expensive !
+  float s = Sin( angleRad ); // <-- Expensive !
+  return new float2
+  (
+    p.x * c - p.y * s, // x
+    p.x * s + p.y * c  // y
+  );
+}
+
+// Rotate a point given a rotation matrix
+float2 RotatePoint( float2x2 m, float2 p )
+{
+  return new float2
+  (
+    p.x * m[0][0] + p.y * m[1][0], // x
+    p.x * m[0][1] + p.y * m[1][1}  // y
+  );
+}
+
+/* ---- - - ---- */
+
+public struct Complex
+{
+  public float r; // Real part
+  public float c; // Imaginary part
+
+  public static Complex operator *( Complex a, Complex b ) =>
+    new() 
+    {
+      r = a.r * b.r - a.c * b.c, // Real part
+      c = a.r * b.c + a.c * b.r  // Imaginary part
+    };
+}
+
+/* ---- - - ---- */
+
+public struct Q
+{
+  public float x, y, z, w;
+  public float SqMag =>  x * x + y * y + z * z + w * w;
+  public Q inverse => Conjugate / SqMag;
+  public Q Conjugate => new() { x = -x, y = -y, z = -z, w = -w };
+
+  public Q( float angleRad, float3 axis ) // Angle axis to Quaternion
+  {
+    w = math.cos( angleRad / 2 );
+    float s = math.sin( angleRad / 2 );
+    x = s * axis.x;
+    y = s * axis.y;
+    z = s * axis.z;
+  }
+  
+  public static Q operator *( Q a, Q b ) => // Composition
+  {
+    x = a.w * b.x + a.x * b.w + a.y * b.z - a.z * b.y,
+    y = a.w * b.y - a.x * b.z + a.y * b.w + a.z * b.x,
+    z = a.w * b.z + a.x * b.y - a.y * b.x + a.z * b.x,
+    w = a.w * b.w - a.x * b.x - a.y * b.y - a.z * b.z
+  }
+  
+  public static Q operator /( Q a, float b ) =>
+  new { x = a.x / b, y = a.y / b, z = a.z / b, w = a.w / b };  
+}
+
+/* ---- - - ---- */
