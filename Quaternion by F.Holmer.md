@@ -1,5 +1,6 @@
-/** Function Described by Freya Holmer in her talk about quats in the NGJ2025 **/
+## Function Described by Freya Holmer in her talk about quats in the NGJ2025
 
+```
 // Rotate a point given an angle
 float2 RotatePoint( float angleRad, float p )
 {  
@@ -21,9 +22,9 @@ float2 RotatePoint( float2x2 m, float2 p )
     p.x * m[0][1] + p.y * m[1][1}  // y
   );
 }
+```
 
-/* ---- - - ---- */
-
+```
 public struct Complex
 {
   public float r; // Real part
@@ -36,9 +37,9 @@ public struct Complex
       c = a.r * b.c + a.c * b.r  // Imaginary part
     };
 }
+```
 
-/* ---- - - ---- */
-
+```
 public struct Q
 {
   public float x, y, z, w;
@@ -66,5 +67,5 @@ public struct Q
   public static Q operator /( Q a, float b ) =>
   new { x = a.x / b, y = a.y / b, z = a.z / b, w = a.w / b };  
 }
+```
 
-/* ---- - - ---- */
